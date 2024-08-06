@@ -17,7 +17,7 @@ COPY . .
 RUN GOOS=linux GOARCH=amd64 go build -o trans_time main.go
 
 # 使用较小的基础镜像来运行二进制文件
-FROM alpine:latest
+FROM debian:stable-slim
 
 # 将构建阶段生成的二进制文件复制到运行阶段
 COPY --from=builder /app/trans_time /trans_time
