@@ -1,0 +1,7 @@
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: transtime
+    ports:
+      - "80:80"
+    restart: unless-stopped
