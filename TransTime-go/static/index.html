@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据传输耗时计算器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>数据传输耗时计算器</h1>
+    <div class="input-container">
+        <div class="input-box">
+            <input type="number" id="dataSize" placeholder="数据量">
+            <select id="dataUnit">
+                <option value="B">B</option>
+                <option value="KB">KB</option>
+                <option value="MB">MB</option>
+                <option value="GB">GB</option>
+                <option value="TB">TB</option>
+            </select>
+        </div>
+        <div class="input-box">
+            <input type="number" id="bandwidth" placeholder="带宽">
+            <select id="bandwidthUnit">
+                <option value="bps">bps</option>
+                <option value="Kbps">Kbps</option>
+                <option value="Mbps">Mbps</option>
+                <option value="Gbps">Gbps</option>
+                <option value="Tbps">Tbps</option>
+            </select>
+        </div>
+    </div>
+    <button onclick="calculateTime()">计算耗时</button>
+    <p id="result"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
