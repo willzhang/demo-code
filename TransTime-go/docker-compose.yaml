@@ -1,7 +1,7 @@
 services:
   nginx:
-    image: registry.cn-shenzhen.aliyuncs.com/cnmirror/transtime:latest
+    image: registry.cn-shenzhen.aliyuncs.com/cnmirror/transtime-go:latest
     container_name: transtime
     ports:
-      - "80:80"
+      - "8080:8080"
     restart: unless-stopped
