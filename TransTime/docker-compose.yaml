@@ -1,5 +1,5 @@
 services:
-  nginx:
+  transtime:
     image: registry.cn-shenzhen.aliyuncs.com/cnmirror/transtime:latest
     container_name: transtime
     ports:
