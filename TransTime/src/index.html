@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>数据传输耗时计算器</h1>
+    
     <div class="input-container">
         <div class="input-box">
             <input type="number" id="dataSize" placeholder="数据量">
@@ -26,8 +27,23 @@
             </select>
         </div>
     </div>
-    <button onclick="calculateTime()">计算耗时</button>
+    
+    <div class="button-container">
+        <button onclick="calculateTime()">计算耗时</button>
+        <button onclick="resetCalculator()">重置</button>
+    </div>
+
     <p id="result"></p>
+    
+    <!-- 暗黑模式切换按钮 -->
+    <label class="switch">
+        <input type="checkbox" id="toggleBtn">
+        <span class="slider round"></span>
+    </label>
+
+    <footer>
+        <p>© <span id="year"></span> 数据传输耗时计算器</p>
+    </footer>
 
     <script src="./js/script.js"></script>
 </body>

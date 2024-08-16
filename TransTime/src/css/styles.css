@@ -4,12 +4,35 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    color: var(--text-color); /* 使用文本颜色变量 */
+}
+
+main {
+    flex: 1; /* 使main内容区域扩展以填充页面高度 */
+}
+
+:root {
+    --text-color: black; /* 默认文本颜色 */
+    --button-bg: #007BFF; /* 默认按钮背景色 */
+    --button-color: white; /* 默认按钮字体颜色 */
+    --footer-bg: #f1f1f1; /* 默认页脚背景色 */
+    --footer-text-color: black; /* 默认页脚文本颜色 */
+}
+
+.dark-mode {
+    background-color: #333;
+    --text-color: white; /* 暗黑模式下的文本颜色 */
+    --button-bg: #555; /* 暗黑模式下的按钮背景色 */
+    --button-color: #fff; /* 暗黑模式下的按钮字体颜色 */
+    --footer-bg: #222; /* 暗黑模式下的页脚背景色 */
+    --footer-text-color: #ccc; /* 暗黑模式下的页脚文本颜色 */
 }
 
 h1 {
     margin-bottom: 20px;
+    color: var(--text-color); /* 使用文本颜色变量 */
 }
 
 .input-container {
@@ -29,14 +52,82 @@ input, select {
     font-size: 16px;
 }
 
+.button-container {
+    display: flex;
+    gap: 15px; /* 调整按钮之间的间距 */
+    margin-bottom: 20px; /* 按钮与结果区域之间的间距 */
+}
+
 button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #result {
     margin-top: 20px;
     font-size: 18px;
-    color: #333;
+    color: var(--text-color);
+}
+
+/* 切换按钮的样式 */
+.switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--footer-bg); /* 使用页脚背景颜色变量 */
+    padding: 10px 0;
+    color: var(--footer-text-color); /* 使用页脚文本颜色变量 */
 }

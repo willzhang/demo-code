@@ -39,3 +39,35 @@ function calculateTime() {
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = `数据传输耗时约为 ${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
 }
+
+function resetCalculator() {
+    // 清空输入框的值
+    document.getElementById('dataSize').value = '';
+    document.getElementById('bandwidth').value = '';
+
+    // 重置选择框到默认值
+    document.getElementById('dataUnit').selectedIndex = 1; // 默认选择 GB
+    document.getElementById('bandwidthUnit').selectedIndex = 1; // 默认选择 Mbps
+
+    // 清空结果显示区域
+    document.getElementById('result').innerHTML = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
+});
+
+// 暗黑模式切换功能
+function initDarkModeToggle() {
+    const body = document.body;
+    const darkModeToggle = document.getElementById('toggleBtn');
+
+    darkModeToggle.addEventListener('change', () => {
+        body.classList.toggle('dark-mode');
+    });
+}
+
+// 页面加载完成后初始化暗黑模式切换功能
+document.addEventListener('DOMContentLoaded', initDarkModeToggle);
