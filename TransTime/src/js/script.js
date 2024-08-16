@@ -54,6 +54,7 @@ function resetCalculator() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 获取当前年份并设置到页脚中
     const yearElement = document.getElementById('year');
     const currentYear = new Date().getFullYear();
     yearElement.textContent = currentYear;
