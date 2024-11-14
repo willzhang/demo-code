@@ -1,0 +1,19 @@
+## 求出1-100以内所有偶数的和
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.count2();
+    }    
+    public void count2(){
+        int sum=0;
+        for(int i=1;i<=100;i++){
+            if(i%2==0){
+                sum+=i;
+            }
+        }
+        System.out.println("1-100以内偶数的和="+sum);
+    }
+}
+```
